@@ -6,7 +6,6 @@ const morgan = require('morgan')
 const passport = require('passport')
 const config = require('./config/main')
 const cors = require('cors')
-const port = process.env.PORT | 8080
 
 // Use body-parser to get POST requests for API use
 app.use(bodyParser.urlencoded({extended: true}))
@@ -26,5 +25,5 @@ require('./routers/clients')(app)
 require('./routers/brands')(app)
 
 // Start the server
-app.listen(port)
-console.log('Your server is running on port ' + port + '.')
+app.listen(process.env.PORT || 5000)
+console.log('Your server is running on port ' + (process.env.PORT || 5000) + '.')
