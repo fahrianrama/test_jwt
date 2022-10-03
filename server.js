@@ -6,7 +6,7 @@ const morgan = require('morgan')
 const passport = require('passport')
 const config = require('./config/main')
 const cors = require('cors')
-const port = 8080
+const port = process.env.PORT | 8080
 
 // Use body-parser to get POST requests for API use
 app.use(bodyParser.urlencoded({extended: true}))
